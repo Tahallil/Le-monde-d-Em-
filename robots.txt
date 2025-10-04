@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Optional: block query and internal search results (uncomment if you add a site search at /recherche)
+# Disallow: /recherche
+
+Sitemap: https://lemondedema.com/sitemap.xml
