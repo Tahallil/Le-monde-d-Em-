@@ -148,7 +148,7 @@ export default function Agenda() {
                 name: "Que faut-il apporter pour les ateliers ?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Prévoyez des vêtements confortables, une gourde et une collation. Pour les activités nature, des chaussures adaptées sont recommandées. Tout le matériel créatif est fourni.",
+                  text: "Prévoyez des vêtements confortables, une gourde et une collation saine, si possible. Pour les activités nature, des chaussures adaptées sont recommandées. Tout le matériel créatif est fourni.",
                 },
               },
               {
@@ -304,7 +304,7 @@ export default function Agenda() {
             </li>
 
             <li className="bg-white p-4 rounded-lg shadow flex justify-between items-center">
-              <span>📍 Samedi : CareFit (Ottignies-Louvain-la-Neuve)</span>
+              <span>📍 Samedi : CareFit (Rixensart)</span>
               <a
                 href="https://www.google.com/maps/place/CareFit+-+Kin%C3%A9s+%2F+Kin%C3%A9s+du+sport+%2F+Podologue+%2F+Ost%C3%A9opathe+%2F+Nutritionniste%2F+Psy+%2F+Coaching/@50.7239188,4.5104649,17z/data=!4m14!1m7!3m6!1s0x47c3d7a4b6e814a3:0x83d7d4c2f94f5249!2sCareFit+-+Kin%C3%A9s+%2F+Kin%C3%A9s+du+sport+%2F+Podologue+%2F+Ost%C3%A9opathe+%2F+Nutritionniste%2F+Psy+%2F+Coaching!8m2!3d50.7239154!4d4.5130398!16s%2Fg%2F11pz359y3b!3m5!1s0x47c3d7a4b6e814a3:0x83d7d4c2f94f5249!8m2!3d50.7239154!4d4.5130398!16s%2Fg%2F11pz359y3b?entry=ttu"
                 target="_blank"
@@ -360,7 +360,7 @@ export default function Agenda() {
                 Des <strong>vêtements adaptés</strong> à la météo, de{" "}
                 <strong>bonnes chaussures</strong> si l’activité se déroule en
                 forêt, une <strong>gourde</strong> et une{" "}
-                <strong>collation</strong>.
+                <strong>collation</strong>, saine si possible.
               </p>
             </div>
 
@@ -381,7 +381,7 @@ export default function Agenda() {
               </h3>
               <p className="font-texte">
                 Les ateliers sont ouverts dès <strong>6 ans</strong>. Le
-                dimanche, certaines sessions sont accessibles dès{" "}
+                dimanche, les sessions sont accessibles dès{" "}
                 <strong>3 ans</strong>.
               </p>
             </div>

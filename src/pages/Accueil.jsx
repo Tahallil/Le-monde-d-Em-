@@ -300,7 +300,7 @@ function Accueil() {
             /images/fond4-768.jpg 768w"
             sizes="100vw"
             alt="Branche fleurie posée sur un tissu blanc avec un mala, une statue de Bouddha, une bougie et un bol tibétain"
-            fetchPriority="high"
+            fetchpriority="high"
             decoding="async"
             width="1920"
             height="1080"
@@ -316,20 +316,37 @@ function Accueil() {
           <h1
             id="hero-title"
             className="text-6xl md:text-9xl lg:text-9xl font-titre mb-6 text-white drop-shadow-2xl animate-float"
-            style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.3)" }}
+            style={{
+              WebkitTextStroke: "1px rgba(0,0,0,0.25)",
+              textShadow:
+                "0 3px 12px rgba(0,0,0,0.45), 0 0 16px rgba(99,46,98,0.25)",
+            }}
           >
             Le monde d'Emâ
           </h1>
-          <p
-            className="text-xl md:text-3xl lg:text-4xl font-texte text-mauve-perso/95 max-w-4xl leading-relaxed drop-shadow"
-            style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.3)" }}
-          >
-            Bienvenue dans un monde de{" "}
-            <span className="text-mauve-perso font-semibold">découvertes</span>{" "}
-            et de{" "}
-            <span className="text-mauve-perso font-semibold">bien-être</span>{" "}
-            pour petits et grands
-          </p>
+          {/* Wrapper lisibilité responsive */}
+          <div className="hero-line-wrap relative inline-block">
+            {/* Bande douce derrière la ligne */}
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute left-1/2 -translate-x-1/2 -z-10
+               h-[3.1rem] md:h-[3.6rem] w-[112%] md:w-[108%] rounded-[2rem]"
+              style={{
+                background:
+                  "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,.45) 50%, rgba(0,0,0,0) 100%)",
+                filter: "blur(6px)",
+                opacity: 0.85, // plus marqué en mobile
+              }}
+            />
+
+            {/* Ligne d’accroche – multi-ligne, sans débord */}
+            <p className="hero-line text-xl md:text-3xl lg:text-4xl font-texte text-white max-w-4xl leading-relaxed inline-block relative">
+              Bienvenue dans un monde de{" "}
+              <span className="font-semibold text-rose-perso">découvertes</span> et de{" "}
+              <span className="font-semibold text-rose-perso">bien-être</span> pour petits et
+              grands
+            </p>
+          </div>
 
           <div className="relative z-10 flex flex-col md:flex-row items-center gap-6 mt-8">
             <Link
@@ -384,7 +401,6 @@ function Accueil() {
               <span className="text-mauve-perso font-bold bg-white/10 px-1 rounded">
                 librement
               </span>
-              .
             </p>
           </div>
 
@@ -405,7 +421,6 @@ function Accueil() {
               <span className="text-mauve-perso font-bold bg-white/10 px-1 rounded">
                 bienveillance
               </span>
-              .
             </p>
           </div>
 
@@ -426,7 +441,7 @@ function Accueil() {
               <span className="text-mauve-perso font-bold bg-white/10 px-1 rounded">
                 vérité
               </span>{" "}
-              de chacun.
+              de chacun
             </p>
           </div>
         </div>
@@ -481,12 +496,12 @@ function Accueil() {
                 </h3>
                 <p className="text-justify text-gray-700 leading-relaxed">
                   Diplômée en tant qu'institutrice primaire en Belgique depuis{" "}
-                  <span className="font-semibold text-mauve-perso bg-mauve-perso/10 px-1 rounded">
+                  <span className="font-semibold text-mauve-perso px-1 rounded">
                     juin 2021
                   </span>
                   , je me suis vite rendu compte lors de mon expérience sur le
                   terrain que le{" "}
-                  <span className="font-semibold italic text-mauve-perso bg-mauve-perso/10 px-1 rounded">
+                  <span className="font-semibold italic text-mauve-perso px-1 rounded">
                     « bien-être »
                   </span>{" "}
                   était une priorité dans l'éducation.
@@ -610,12 +625,12 @@ function Accueil() {
                   💜 Retour en Belgique
                 </h3>
                 <p className="text-justify text-gray-700 leading-relaxed">
-                  En juin 2025, je prends la dure décision de quitter la Corse
-                  et tout ce que j’avais entrepris, pour revenir développer mes
+                  En juin 2025, je prends la décision de quitter la Corse et
+                  tout ce que j’avais entrepris, pour revenir développer mes
                   activités en Belgique, notamment des{" "}
                   <span className="font-semibold text-mauve-perso">
-                    ateliers créatifs et d’art-thérapie pour enfants dans le
-                    Brabant wallon
+                    ateliers créatifs, de yoga et d’art-thérapie pour enfants
+                    dans le Brabant wallon
                   </span>
                   .
                 </p>

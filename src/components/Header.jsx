@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 export default function Header({ onMenuToggle }) {
   return (
     <header
-      className="flex items-center justify-between px-4 py-2 bg-white shadow-md z-50 relative"
+      className="flex items-center justify-between px-3 sm:px-4 py-2 sm:py-3 bg-white shadow-md z-50 relative"
       role="banner"
     >
       <button
         onClick={onMenuToggle}
-        className="text-2xl text-gray-800"
+        className="text-xl sm:text-2xl text-gray-800 flex-shrink-0"
         aria-label="Ouvrir le menu"
       >
         <FaBars aria-hidden="true" focusable="false" />
@@ -19,38 +19,38 @@ export default function Header({ onMenuToggle }) {
       <Link
         to="/"
         aria-label="Accueil - Le monde d'Emâ"
-        className="flex items-center gap-3"
+        className="flex items-center gap-2 sm:gap-3 flex-1 justify-center mx-2 sm:mx-4"
       >
-        <picture>
+        <picture className="flex-shrink-0">
           <source
             srcSet="/images/webp/logof-64.webp 1x, /images/webp/logof-128.webp 2x"
             type="image/webp"
           />
           <img
             src="/images/webp/logof-64.webp"
-            alt="Logo Le monde d’Emâ"
+            alt="Logo Le monde d'Emâ"
             width="64"
             height="68"
-            className="block h-14 w-auto"
+            className="block h-10 sm:h-12 md:h-14 w-auto"
             style={{ aspectRatio: "501 / 530" }}
             loading="eager"
             decoding="async"
           />
         </picture>
-        <span className="font-bold font-titre text-4xl md:text-5xl text-gray-900">
+        <span className="font-bold font-titre text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-900 whitespace-nowrap">
           Le monde d'Emâ
         </span>
       </Link>
 
-      <nav aria-label="Réseaux sociaux" className="flex space-x-4 text-xl">
-        <a href="#footer" className="text-red-500" aria-label="Nous contacter">
+      <nav aria-label="Réseaux sociaux" className="flex space-x-2 sm:space-x-3 md:space-x-4 text-base sm:text-lg md:text-xl flex-shrink-0">
+        <a href="#footer" className="text-mauve-perso hover:opacity-80 transition-opacity" aria-label="Nous contacter">
           <FaEnvelope aria-hidden="true" focusable="false" />
         </a>
         <a
           href="https://www.instagram.com/le_monde_ema/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-pink-500"
+          className="text-pink-500 hover:opacity-80 transition-opacity"
           aria-label="Instagram Le monde d'Emâ"
         >
           <FaInstagram aria-hidden="true" focusable="false" />
@@ -59,7 +59,7 @@ export default function Header({ onMenuToggle }) {
           href="https://www.facebook.com/people/Le-monde-dEm%C3%A2/61579992146987/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-blue-600"
+          className="text-blue-600 hover:opacity-80 transition-opacity"
           aria-label="Facebook Le monde d'Emâ"
         >
           <FaFacebook aria-hidden="true" focusable="false" />
