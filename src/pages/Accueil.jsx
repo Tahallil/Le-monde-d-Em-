@@ -86,197 +86,241 @@ function Accueil() {
 
         {/* Enhanced JSON-LD structured data */}
         <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@graph": [
-              {
-                "@type": "Organization",
-                "@id": "https://lemondedema.com/#organization",
-                name: "Le monde d'Emâ",
-                alternateName: "Emma art-thérapeute Brabant wallon",
-                url: "https://lemondedema.com/",
-                logo: {
-                  "@type": "ImageObject",
-                  url: "https://lemondedema.com/images/logof.png",
-                  width: 400,
-                  height: 400,
+          {JSON.stringify(
+            {
+              "@context": "https://schema.org",
+              "@graph": [
+                /* ───────────────── Organization (entité mère) ───────────────── */
+                {
+                  "@type": "Organization",
+                  "@id": "https://lemondedema.com/#organization",
+                  name: "Le monde d'Emâ",
+                  alternateName: "Emma art-thérapeute Brabant wallon",
+                  url: "https://lemondedema.com/",
+                  logo: {
+                    "@type": "ImageObject",
+                    url: "https://lemondedema.com/images/logof.png",
+                    width: 400,
+                    height: 400,
+                  },
+                  image: "https://lemondedema.com/images/og-home.png",
+                  description:
+                    "Ateliers de bien-être, art-thérapie et activités créatives pour enfants dans le Brabant wallon.",
+                  foundingDate: "2021",
+                  founder: {
+                    "@type": "Person",
+                    "@id": "https://lemondedema.com/#person",
+                    name: "Emma",
+                    jobTitle: "Art-thérapeute et institutrice certifiée",
+                    knowsAbout: [
+                      "Art-thérapie",
+                      "Développement personnel enfants",
+                      "Yoga enfants",
+                      "Communication non violente",
+                    ],
+                    description:
+                      "Art-thérapeute passionnée par le bien-être des enfants, formée en communication non violente.",
+                  },
+                  sameAs: [
+                    "https://www.instagram.com/le_monde_ema/",
+                    "https://www.facebook.com/people/Le-monde-dEm%C3%A2/61579992146987/",
+                  ],
+                  contactPoint: {
+                    "@type": "ContactPoint",
+                    contactType: "customer service",
+                    email: "contact.lemondedema@gmail.com",
+                    telephone: "+32-472-71-49-70",
+                    areaServed: "BE",
+                    availableLanguage: "French",
+                    hoursAvailable: {
+                      "@type": "OpeningHoursSpecification",
+                      dayOfWeek: [
+                        "Monday",
+                        "Tuesday",
+                        "Wednesday",
+                        "Thursday",
+                        "Friday",
+                        "Saturday",
+                        "Sunday",
+                      ],
+                      opens: "09:00",
+                      closes: "18:00",
+                    },
+                  },
                 },
-                image: "https://lemondedema.com/images/og-home.png",
-                description:
-                  "Ateliers de bien-être, art-thérapie et activités créatives pour enfants dans le Brabant wallon",
-                foundingDate: "2021",
-                founder: {
+
+                /* ───────────────── LocalBusiness (service local itinérant) ───────────────── */
+                {
+                  "@type": "LocalBusiness",
+                  "@id": "https://lemondedema.com/#localbusiness",
+                  name: "Le monde d'Emâ",
+                  url: "https://lemondedema.com/",
+                  image: "https://lemondedema.com/images/og-home.png",
+                  telephone: "+32-472-71-49-70",
+                  email: "contact.lemondedema@gmail.com",
+                  inLanguage: "fr-BE",
+                  priceRange: "20€–45€",
+                  paymentAccepted: "Cash, Bank transfer",
+
+                  /* ▶ Zone couverte (SAB) */
+                  areaServed: {
+                    "@type": "AdministrativeArea",
+                    name: "Brabant wallon",
+                  },
+                  serviceArea: {
+                    "@type": "AdministrativeArea",
+                    name: "Brabant wallon",
+                  },
+
+                  /* ▶ Adresse générique régionale (pas d’adresse postale fixe) */
+                  address: {
+                    "@type": "PostalAddress",
+                    addressRegion: "Brabant wallon",
+                    addressCountry: "BE",
+                  },
+
+                  /* ▶ Positionnement itinérant */
+                  serviceType:
+                    "Ateliers de bien-être et d’art-thérapie pour enfants",
+                  additionalProperty: [
+                    {
+                      "@type": "PropertyValue",
+                      name: "Mode d’intervention",
+                      value:
+                        "Services itinérants / multi-lieux partenaires ; adresses précises communiquées lors de la réservation.",
+                    },
+                  ],
+
+                  /* ❌ Pas d’horaires figés tant que ça bouge (omission volontaire) */
+
+                  /* ▶ Offres / catalogue de services */
+                  hasOfferCatalog: {
+                    "@type": "OfferCatalog",
+                    name: "Services de bien-être pour enfants",
+                    itemListElement: [
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "Art-thérapie enfants",
+                          description:
+                            "Ateliers d'art-thérapie pour l'expression créative et émotionnelle.",
+                        },
+                      },
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "Acroyoga famille",
+                          description:
+                            "Séances d'acroyoga pour renforcer les liens familiaux.",
+                        },
+                      },
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "Yoga parent–enfant",
+                          description:
+                            "Yoga ludique pour parents et enfants de 3 à 5 ans.",
+                        },
+                      },
+                    ],
+                  },
+
+                  /* ▶ Actions utiles */
+                  potentialAction: [
+                    {
+                      "@type": "ReserveAction",
+                      name: "Réserver / Demander confirmation",
+                      target: [
+                        "mailto:contact.lemondedema@gmail.com",
+                        "tel:+32472714970",
+                        "https://wa.me/32472714970",
+                      ],
+                    },
+                    {
+                      "@type": "ContactAction",
+                      name: "Contacter",
+                      target: [
+                        "mailto:contact.lemondedema@gmail.com",
+                        "tel:+32472714970",
+                      ],
+                    },
+                  ],
+
+                  sameAs: [
+                    "https://www.instagram.com/le_monde_ema/",
+                    "https://www.facebook.com/people/Le-monde-dEm%C3%A2/61579992146987/",
+                  ],
+                },
+
+                /* ───────────────── WebSite (site + site search) ───────────────── */
+                {
+                  "@type": "WebSite",
+                  "@id": "https://lemondedema.com/#website",
+                  url: "https://lemondedema.com/",
+                  name: "Le monde d'Emâ",
+                  inLanguage: "fr-BE",
+                  description:
+                    "Site officiel des ateliers de bien-être et d'art-thérapie pour enfants.",
+                  publisher: { "@id": "https://lemondedema.com/#organization" },
+                  potentialAction: {
+                    "@type": "SearchAction",
+                    target:
+                      "https://lemondedema.com/recherche?q={search_term_string}",
+                    "query-input": "required name=search_term_string",
+                  },
+                },
+
+                /* ───────────────── WebPage (page d’accueil) ───────────────── */
+                {
+                  "@type": "WebPage",
+                  "@id": "https://lemondedema.com/#webpage",
+                  url: "https://lemondedema.com/",
+                  name: "Accueil – Ateliers bien-être & art-thérapie enfants",
+                  isPartOf: { "@id": "https://lemondedema.com/#website" },
+                  about: { "@id": "https://lemondedema.com/#organization" },
+                  inLanguage: "fr-BE",
+                  description:
+                    "Découvrez nos ateliers de bien-être, art-thérapie et créativité pour enfants dans le Brabant wallon. Développement personnel dans un cadre bienveillant.",
+                  breadcrumb: {
+                    "@type": "BreadcrumbList",
+                    itemListElement: [
+                      {
+                        "@type": "ListItem",
+                        position: 1,
+                        name: "Accueil",
+                        item: "https://lemondedema.com/",
+                      },
+                    ],
+                  },
+                },
+
+                /* ───────────────── Person (porteuse du projet) ───────────────── */
+                {
                   "@type": "Person",
+                  "@id": "https://lemondedema.com/#person",
                   name: "Emma",
-                  jobTitle: "Art-thérapeute et institutrice certifiée",
+                  jobTitle: "Art-thérapeute et institutrice",
+                  worksFor: { "@id": "https://lemondedema.com/#organization" },
+                  alumniOf: "Haute École en Belgique",
                   knowsAbout: [
                     "Art-thérapie",
-                    "Développement personnel enfants",
-                    "Yoga enfants",
+                    "Éducation",
+                    "Développement personnel",
                     "Communication non violente",
+                    "Yoga enfants",
                   ],
+                  hasCredential: "Diplôme d'institutrice primaire",
+                  description:
+                    "Art-thérapeute passionnée par le bien-être des enfants, formée en communication non violente.",
                 },
-                sameAs: [
-                  "https://www.instagram.com/le_monde_ema/",
-                  "https://www.facebook.com/people/Le-monde-dEm%C3%A2/61579992146987/",
-                ],
-                contactPoint: {
-                  "@type": "ContactPoint",
-                  contactType: "customer service",
-                  email: "contact.lemondedema@gmail.com",
-                  telephone: "+32-472-71-49-70",
-                  areaServed: "BE",
-                  availableLanguage: "French",
-                  hoursAvailable: {
-                    "@type": "OpeningHoursSpecification",
-                    dayOfWeek: [
-                      "Monday",
-                      "Tuesday",
-                      "Wednesday",
-                      "Thursday",
-                      "Friday",
-                      "Saturday",
-                      "Sunday",
-                    ],
-                    opens: "09:00",
-                    closes: "18:00",
-                  },
-                },
-              },
-              {
-                "@type": "LocalBusiness",
-                "@id": "https://lemondedema.com/#localbusiness",
-                name: "Le monde d'Emâ",
-                image: "https://lemondedema.com/images/og-home.png",
-                url: "https://lemondedema.com/",
-                telephone: "+32-472-71-49-70",
-                email: "contact.lemondedema@gmail.com",
-                priceRange: "40€",
-                paymentAccepted: "Cash, Bank transfer",
-                inLanguage: "fr-BE",
-                areaServed: {
-                  "@type": "AdministrativeArea",
-                  name: "Brabant wallon",
-                },
-                address: {
-                  "@type": "PostalAddress",
-                  addressCountry: "BE",
-                  addressRegion: "Brabant wallon",
-                },
-                geo: {
-                  "@type": "GeoCoordinates",
-                  latitude: 50.7158,
-                  longitude: 4.6126,
-                },
-                sameAs: [
-                  "https://www.instagram.com/le_monde_ema/",
-                  "https://www.facebook.com/people/Le-monde-dEm%C3%A2/61579992146987/",
-                ],
-                openingHoursSpecification: undefined,
-                additionalProperty: [
-                  {
-                    "@type": "PropertyValue",
-                    name: "Mode d'ouverture",
-                    value:
-                      "Sur rendez-vous ; consultez l’agenda public mis à jour.",
-                  },
-                ],
-                serviceArea: {
-                  "@type": "AdministrativeArea",
-                  name: "Brabant wallon",
-                },
-                hasOfferCatalog: {
-                  "@type": "OfferCatalog",
-                  name: "Services de bien-être pour enfants",
-                  itemListElement: [
-                    {
-                      "@type": "Offer",
-                      itemOffered: {
-                        "@type": "Service",
-                        name: "Art-thérapie enfants",
-                        description:
-                          "Ateliers d'art-thérapie pour l'expression créative et émotionnelle",
-                      },
-                    },
-                    {
-                      "@type": "Offer",
-                      itemOffered: {
-                        "@type": "Service",
-                        name: "Acroyoga famille",
-                        description:
-                          "Séances d'acroyoga pour renforcer les liens familiaux",
-                      },
-                    },
-                    {
-                      "@type": "Offer",
-                      itemOffered: {
-                        "@type": "Service",
-                        name: "Yoga parent-enfant",
-                        description:
-                          "Yoga ludique pour parents et enfants de 3 à 5 ans",
-                      },
-                    },
-                  ],
-                },
-              },
-              {
-                "@type": "WebSite",
-                "@id": "https://lemondedema.com/#website",
-                url: "https://lemondedema.com/",
-                name: "Le monde d'Emâ",
-                description:
-                  "Site officiel des ateliers de bien-être et d'art-thérapie pour enfants",
-                inLanguage: "fr-BE",
-                publisher: { "@id": "https://lemondedema.com/#organization" },
-                potentialAction: {
-                  "@type": "SearchAction",
-                  target:
-                    "https://lemondedema.com/recherche?q={search_term_string}",
-                  "query-input": "required name=search_term_string",
-                },
-              },
-              {
-                "@type": "WebPage",
-                "@id": "https://lemondedema.com/#webpage",
-                url: "https://lemondedema.com/",
-                name: "Accueil - Ateliers bien-être et art-thérapie enfants",
-                isPartOf: { "@id": "https://lemondedema.com/#website" },
-                about: { "@id": "https://lemondedema.com/#organization" },
-                inLanguage: "fr-BE",
-                description:
-                  "Découvrez nos ateliers de bien-être, art-thérapie et créativité pour enfants dans le Brabant wallon. Développement personnel dans un cadre bienveillant.",
-                breadcrumb: {
-                  "@type": "BreadcrumbList",
-                  itemListElement: [
-                    {
-                      "@type": "ListItem",
-                      position: 1,
-                      name: "Accueil",
-                      item: "https://lemondedema.com/",
-                    },
-                  ],
-                },
-              },
-              {
-                "@type": "Person",
-                "@id": "https://lemondedema.com/#person",
-                name: "Emma",
-                jobTitle: "Art-thérapeute et institutrice",
-                worksFor: { "@id": "https://lemondedema.com/#organization" },
-                alumniOf: "Haute École en Belgique",
-                knowsAbout: [
-                  "Art-thérapie",
-                  "Éducation",
-                  "Développement personnel",
-                  "Communication non violente",
-                  "Yoga enfants",
-                ],
-                hasCredential: "Diplôme d'institutrice primaire",
-                description:
-                  "Art-thérapeute passionnée par le bien-être des enfants, formée en communication non violente",
-              },
-            ],
-          })}
+              ],
+            },
+            null,
+            2
+          )}
         </script>
       </Helmet>
 
@@ -342,9 +386,10 @@ function Accueil() {
             {/* Ligne d’accroche – multi-ligne, sans débord */}
             <p className="hero-line text-xl md:text-3xl lg:text-4xl font-texte text-white max-w-4xl leading-relaxed inline-block relative">
               Bienvenue dans un monde de{" "}
-              <span className="font-semibold text-rose-perso">découvertes</span> et de{" "}
-              <span className="font-semibold text-rose-perso">bien-être</span> pour petits et
-              grands
+              <span className="font-semibold text-rose-perso">découvertes</span>{" "}
+              et de{" "}
+              <span className="font-semibold text-rose-perso">bien-être</span>{" "}
+              pour petits et grands
             </p>
           </div>
 
