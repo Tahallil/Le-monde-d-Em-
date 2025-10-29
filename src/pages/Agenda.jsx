@@ -506,7 +506,7 @@ export default function Agenda() {
                 À partir de quel âge les enfants peuvent-ils participer ?
               </h3>
               <p className="font-texte">
-                Les ateliers sont ouverts dès <strong>6 ans</strong>. Le
+                Les ateliers sont ouverts dès <strong>5 ans</strong>. Le
                 dimanche, les sessions sont accessibles dès{" "}
                 <strong>3 ans</strong>.
               </p>
