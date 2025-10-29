@@ -16,6 +16,7 @@ import {
   FaPalette,
   FaArrowRight,
   FaCalendarCheck,
+  FaSpa,
 } from "react-icons/fa";
 import Reveal from "../components/Reveal";
 
@@ -117,10 +118,9 @@ export default function Activites() {
                 },
                 offers: {
                   "@type": "Offer",
-                  price: "45",
+                  price: "30",
                   priceCurrency: "EUR",
-                  description:
-                    "Tarif par enfant et par séance. Abonnement 5 séances : 200€ (au lieu de 225€). Horaires : 14h–17h (3h).",
+                  description: "Tarif par enfant et par séance.",
                 },
                 educationalLevel: "Enfants 6-12 ans",
                 teaches: [
@@ -177,9 +177,9 @@ export default function Activites() {
                 },
                 offers: {
                   "@type": "Offer",
-                  price: "20",
+                  price: "15",
                   priceCurrency: "EUR",
-                  description: "20€ par personne pour 1h.",
+                  description: "15€ par personne pour 1h.",
                 },
                 teaches: [
                   "Acroyoga",
@@ -213,12 +213,22 @@ export default function Activites() {
                   "@type": "Audience",
                   audienceType: "Parents et enfants 3-5 ans",
                 },
-                offers: {
-                  "@type": "Offer",
-                  price: "20",
-                  priceCurrency: "EUR",
-                  description: "20€ par personne pour 1h.",
-                },
+                offers: [
+                  {
+                    "@type": "Offer",
+                    price: "10",
+                    priceCurrency: "EUR",
+                    category: "child",
+                    description: "10€ par enfant pour 1h.",
+                  },
+                  {
+                    "@type": "Offer",
+                    price: "15",
+                    priceCurrency: "EUR",
+                    category: "adult",
+                    description: "15€ par adulte pour 1h.",
+                  },
+                ],
                 teaches: [
                   "Yoga ludique",
                   "Relaxation",
@@ -287,50 +297,89 @@ export default function Activites() {
         </script>
       </Helmet>
 
-      <section className="relative w-full h-[95vh] bg-rose-perso/40 flex flex-col">
-        {/* Enhanced grid with better hover effects */}
-        <div className="grid grid-cols-1 md:grid-cols-3 flex-1 relative z-10">
+      <section className="relative w-full bg-rose-perso">
+        {/* Titre */}
+        <div className="mx-auto max-w-6xl px-4 pt-8">
           <h1
-            className="absolute top-24 left-1/2 -translate-x-1/2 text-6xl md:text-9xl lg:text-9xl text-white font-titre text-center px-4 animate-float drop-shadow-2xl z-10"
+            className="text-5xl md:text-7xl lg:text-9xl font-bold font-titre text-white mb-8 flex items-center justify-center gap-4 animate-fade-in-down"
             style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.3)" }}
           >
             Les Activités
           </h1>
-          {/* Art-thérapie card */}
+
+          {/* Intro + boutons (pleine conscience + agenda, plus haut) */}
+          <div className="mt-5 md:mt-6">
+            <div className="mx-auto max-w-3xl rounded-2xl bg-white/15 backdrop-blur px-5 py-4 shadow-[0_8px_24px_rgba(0,0,0,0.08)]">
+              <p className="text-[15px] sm:text-base font-texte text-white/95 text-center">
+                Nous proposons trois types d’ateliers :{" "}
+                <strong>le mercredi</strong> (Art-thérapie et Yoga),
+                <strong> le samedi</strong> (Acroyoga famille) et{" "}
+                <strong>le dimanche</strong> (Yoga parent-enfant).
+                <br className="hidden sm:block" />
+                Chacun{" "}
+                <strong>débute par un mini atelier de pleine conscience</strong>
+              </p>
+            </div>
+
+            {/* Boutons d’action */}
+            <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
+              <a
+                href="#pleine-conscience"
+                className="inline-flex items-center gap-3 rounded-full border border-white/70 bg-white/90 px-5 sm:px-6 py-2.5 text-sm sm:text-base font-texte text-mauve-perso shadow hover:shadow-md hover:translate-y-[-1px] transition"
+              >
+                <FaSpa />
+                En savoir plus sur la pleine conscience
+                <FaArrowRight className="text-xs opacity-80" />
+              </a>
+
+              <Link
+                to="/agenda"
+                className="inline-flex items-center gap-3 rounded-full border border-white/70 bg-white/90 px-5 sm:px-6 py-2.5 text-sm sm:text-base font-texte text-mauve-perso shadow hover:shadow-md hover:translate-y-[-1px] transition"
+              >
+                <FaCalendarCheck className="text-base" />
+                Voir les créneaux disponibles
+                <FaArrowRight className="text-xs" />
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Grille (stack mobile / 3 colonnes desktop) */}
+        <div className="mx-auto max-w-6xl px-4 pt-6 pb-8 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+          {/* CARD 1 */}
           <a
             href="#art-therapie"
-            className="relative group overflow-hidden cursor-pointer"
+            className="relative group overflow-hidden rounded-2xl shadow-lg"
             aria-label="Découvrir les ateliers d'Art-thérapie du mercredi"
           >
             <picture>
               <source
                 type="image/webp"
                 srcSet="/images/webp/art-therapie-480.webp 480w,
-            /images/webp/art-therapie-768.webp 768w,
-            /images/webp/art-therapie-1280.webp 1280w,
-            /images/webp/art-therapie-1920.webp 1920w"
+                  /images/webp/art-therapie-768.webp 768w"
               />
               <img
-                src="/images/art-therapie-1280.jpg"
+                src="/images/art-therapie-768.jpg"
                 sizes="(min-width: 768px) 33vw, 100vw"
                 alt="Atelier d'art-thérapie dans le Brabant wallon : enfants développant créativité et intelligence émotionnelle"
                 width="1920"
                 height="1280"
                 loading="lazy"
                 decoding="async"
-                className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                className="w-full h-[46vh] md:h-[32vh] object-cover transform md:group-hover:scale-110 transition-transform duration-700"
               />
             </picture>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent group-hover:from-black/50 transition-all duration-500"></div>
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
+
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent md:from-black/70 md:group-hover:from-black/50 transition-all duration-500"></div>
+            <div className="absolute inset-0 flex flex-col items-center justify-end text-center p-6">
               <h2
-                className="text-3xl md:text-5xl lg:text-7xl font-titre text-mauve-perso mb-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0"
-                style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.3)" }}
+                className="text-3xl sm:text-4xl md:text-5xl font-titre text-white drop-shadow"
+                style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.35)" }}
               >
-                Mercredis Art-Thérapie
+                Mercredi
               </h2>
               <p
-                className="text-lg text-mauve-perso font-texte opacity-0 group-hover:opacity-100 transition-all duration-700 delay-200"
+                className="mt-2 text-base sm:text-lg text-white font-texte"
                 style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.3)" }}
               >
                 Expression créative et émotionnelle
@@ -338,41 +387,40 @@ export default function Activites() {
             </div>
           </a>
 
-          {/* Acroyoga card */}
+          {/* CARD 2 */}
           <a
             href="#acroyoga"
-            className="relative group overflow-hidden cursor-pointer"
+            className="relative group overflow-hidden rounded-2xl shadow-lg"
             aria-label="Découvrir les ateliers d'Acroyoga famille du samedi"
           >
             <picture>
               <source
                 type="image/webp"
                 srcSet="/images/webp/acroyoga-480.webp 480w,
-            /images/webp/acroyoga-768.webp 768w,
-            /images/webp/acroyoga-1280.webp 1280w,
-            /images/webp/acroyoga-1920.webp 1920w"
+                  /images/webp/acroyoga-768.webp 768w"
               />
               <img
-                src="/images/acroyoga-1280.jpg" /* fallback UNIQUE */
+                src="/images/acroyoga-768.jpg"
                 sizes="(min-width: 768px) 33vw, 100vw"
                 alt="Séance d'acroyoga famille : renforcement des liens et confiance mutuelle dans le Brabant wallon"
                 width="1920"
                 height="1280"
                 loading="lazy"
                 decoding="async"
-                className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                className="w-full h-[46vh] md:h-[32vh] object-cover transform md:group-hover:scale-110 transition-transform duration-700"
               />
             </picture>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent group-hover:from-black/50 transition-all duration-500"></div>
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
+
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent md:from-black/70 md:group-hover:from-black/50 transition-all duration-500"></div>
+            <div className="absolute inset-0 flex flex-col items-center justify-end text-center p-6">
               <h2
-                className="text-3xl md:text-5xl lg:text-7xl font-titre text-blue-perso mb-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0"
-                style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.3)" }}
+                className="text-3xl sm:text-4xl md:text-5xl font-titre text-white drop-shadow"
+                style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.35)" }}
               >
-                Samedis Acroyoga
+                Samedi
               </h2>
               <p
-                className="text-lg text-blue-perso font-texte opacity-0 group-hover:opacity-100 transition-all duration-700 delay-200"
+                className="mt-2 text-base sm:text-lg text-white font-texte"
                 style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.3)" }}
               >
                 Complicité et équilibre familial
@@ -380,58 +428,46 @@ export default function Activites() {
             </div>
           </a>
 
-          {/* Yoga card */}
+          {/* CARD 3 */}
           <a
             href="#yoga-enfant"
-            className="relative group overflow-hidden cursor-pointer"
+            className="relative group overflow-hidden rounded-2xl shadow-lg"
             aria-label="Découvrir les ateliers Yoga parent-enfant du dimanche"
           >
             <picture>
               <source
                 type="image/webp"
                 srcSet="/images/webp/yoga-enfant-480.webp 480w,
-            /images/webp/yoga-enfant-768.webp 768w,
-            /images/webp/yoga-enfant-1280.webp 1280w,
-            /images/webp/yoga-enfant-1920.webp 1920w"
+                  /images/webp/yoga-enfant-768.webp 768w"
               />
               <img
-                src="/images/yoga-enfant-1280.jpg"
+                src="/images/yoga-enfant-768.jpg"
                 sizes="(min-width: 768px) 33vw, 100vw"
                 alt="Yoga parent-enfant en nature : détente et connexion dans le Brabant wallon"
                 width="1920"
                 height="1075"
                 loading="lazy"
                 decoding="async"
-                className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                className="w-full h-[46vh] md:h-[32vh] object-cover transform md:group-hover:scale-110 transition-transform duration-700"
               />
             </picture>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent group-hover:from-black/50 transition-all duration-500"></div>
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
+
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent md:from-black/70 md:group-hover:from-black/50 transition-all duration-500"></div>
+            <div className="absolute inset-0 flex flex-col items-center justify-end text-center p-6">
               <h2
-                className="text-3xl md:text-5xl lg:text-7xl font-titre text-rose-perso mb-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0"
-                style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.3)" }}
+                className="text-3xl sm:text-4xl md:text-5xl font-titre text-white drop-shadow"
+                style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.35)" }}
               >
-                Dimanches en mouvement
+                Dimanche
               </h2>
               <p
-                className="text-lg text-rose-perso font-texte opacity-0 group-hover:opacity-100 transition-all duration-700 delay-200"
+                className="mt-2 text-base sm:text-lg text-white font-texte"
                 style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.3)" }}
               >
                 Yoga ludique parent-enfant
               </p>
             </div>
           </a>
-        </div>
-        {/* Call-to-action floating button */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-          <Link
-            to="/agenda"
-            className="group px-8 py-4 bg-white text-mauve-perso font-texte text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center gap-3 backdrop-blur-sm"
-          >
-            <FaCalendarCheck className="text-lg group-hover:scale-110 transition-transform" />
-            Voir les créneaux disponibles
-            <FaArrowRight className="text-sm group-hover:translate-x-1 transition-transform" />
-          </Link>
         </div>
       </section>
 
@@ -458,7 +494,7 @@ export default function Activites() {
               width="1920"
               height="1080"
               loading="eager"
-              fetchPriority="high"
+              fetchpriority="high"
               decoding="async"
               className="w-full h-full object-cover"
             />

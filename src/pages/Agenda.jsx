@@ -137,14 +137,6 @@ export default function Agenda() {
               },
               {
                 "@type": "Question",
-                name: "Quels sont les tarifs des ateliers ?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Mercredis Art-thérapie : 45€ par enfant et par séance. Abonnement de 5 séances à 200€ (au lieu de 225€). Horaires : 14h à 17h (3h le mercredi après-midi). Samedis Acroyoga et Dimanches en mouvement : 20€ par personne pour 1h.",
-                },
-              },
-              {
-                "@type": "Question",
                 name: "Que faut-il apporter pour les ateliers ?",
                 acceptedAnswer: {
                   "@type": "Answer",
@@ -173,6 +165,14 @@ export default function Agenda() {
                 acceptedAnswer: {
                   "@type": "Answer",
                   text: "Les ateliers ont lieu dans différents espaces du Brabant wallon. L'adresse précise est communiquée lors de la confirmation de réservation.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Quels sont les tarifs des ateliers ?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Mercredi (Art-thérapie et Yoga) : 30€ par enfant. Samedi (Acroyoga) : 15€ par personne. Dimanche (Yoga parent–enfant) : 10€ par enfant et 15€ par adulte. Il n’y a pas d’abonnement.",
                 },
               },
             ],
@@ -332,8 +332,134 @@ export default function Agenda() {
         </div>
       </section>
 
+      {/* Section Tarifs */}
+      <section
+        className="py-16 bg-blue-perso"
+        aria-labelledby="tarifs-title"
+      >
+        <div className="max-w-5xl mx-auto px-6">
+          <h2
+            id="tarifs-title"
+            className="text-6xl md:text-7xl font-bold font-titre text-mauve-perso mb-4 text-center"
+          >
+            Tarifs des ateliers
+          </h2>
+
+          <div className="flex justify-center mb-8">
+            <div className="w-24 h-1 bg-mauve-perso rounded-full"></div>
+          </div>
+
+          {/* Badge info */}
+          <p className="font-texte text-base md:text-lg text-gray-700 text-center mb-10">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/70 shadow-sm">
+              🌸{" "}
+              <span className="text-mauve-perso font-semibold">
+                Tarifs simples
+              </span>{" "}
+              — sans abonnement
+            </span>
+          </p>
+
+          {/* Grid de cartes */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            {/* Mercredi */}
+            <article className="group relative rounded-2xl bg-white/80 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all">
+              <div className="absolute -top-3 left-4 px-3 py-1 text-xs font-texte rounded-full bg-mauve-perso text-white shadow">
+                Art-thérapie
+              </div>
+              <div className="p-6 md:p-8 text-center">
+                <h3 className="font-titre text-4xl text-mauve-perso mb-2">
+                  Mercredi
+                </h3>
+                <p className="font-texte text-gray-600 mb-4">
+                  Séance d’expression créative
+                </p>
+                <div className="flex items-baseline justify-center gap-1 mb-2">
+                  <span className="font-texte text-5xl font-bold text-mauve-perso leading-none">
+                    30€
+                  </span>
+                  <span className="font-texte text-gray-600">/ enfant</span>
+                </div>
+                <p className="font-texte text-sm text-gray-500">
+                  Matériel créatif inclus
+                </p>
+              </div>
+            </article>
+
+            {/* Samedi */}
+            <article className="group relative rounded-2xl bg-white/80 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all">
+              <div className="absolute -top-3 left-4 px-3 py-1 text-xs font-texte rounded-full bg-mauve-perso text-white shadow">
+                Acroyoga famille
+              </div>
+              <div className="p-6 md:p-8 text-center">
+                <h3 className="font-titre text-4xl text-mauve-perso mb-2">
+                  Samedi
+                </h3>
+                <p className="font-texte text-gray-600 mb-4">
+                  Jeu, confiance, équilibre
+                </p>
+                <div className="flex items-baseline justify-center gap-1 mb-2">
+                  <span className="font-texte text-5xl font-bold text-mauve-perso leading-none">
+                    15€
+                  </span>
+                  <span className="font-texte text-gray-600">/ personne</span>
+                </div>
+                <p className="font-texte text-sm text-gray-500">Séance de 1h</p>
+              </div>
+            </article>
+
+            {/* Dimanche */}
+            <article className="group relative rounded-2xl bg-white/80 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all">
+              <div className="absolute -top-3 left-4 px-3 py-1 text-xs font-texte rounded-full bg-mauve-perso text-white shadow">
+                Yoga parent-enfant
+              </div>
+              <div className="p-6 md:p-8 text-center">
+                <h3 className="font-titre text-4xl text-mauve-perso mb-2">
+                  Dimanche
+                </h3>
+                <p className="font-texte text-gray-600 mb-4">
+                  Mouvement doux & complicité
+                </p>
+
+                {/* Double prix */}
+                <div className="flex flex-col items-center gap-2">
+                  <div className="flex items-baseline justify-center gap-1">
+                    <span className="font-texte text-4xl font-bold text-mauve-perso leading-none">
+                      10€
+                    </span>
+                    <span className="font-texte text-gray-600">/ enfant</span>
+                  </div>
+                  <div className="flex items-baseline justify-center gap-1">
+                    <span className="font-texte text-4xl font-bold text-mauve-perso leading-none">
+                      15€
+                    </span>
+                    <span className="font-texte text-gray-600">/ adulte</span>
+                  </div>
+                </div>
+
+                <p className="font-texte text-sm text-gray-500 mt-2">
+                  Séance de 1h
+                </p>
+              </div>
+            </article>
+          </div>
+
+          {/* Lien de réservation */}
+          <div className="text-center mt-10">
+            <a
+              href="#reservations"
+              className="inline-flex items-center gap-3 px-6 py-3 bg-mauve-perso text-white font-texte text-lg rounded-xl shadow-lg hover:bg-[#4a2250] transition-colors"
+              aria-label="Aller à la section Réservations"
+            >
+              Voir comment réserver
+              <span aria-hidden>→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Section 3 : FAQ */}
-      <section className="py-16 bg-blue-perso text-gray-800">
+      <section className="py-16 bg-rose-perso/40 text-gray-800">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-7xl font-bold font-titre text-mauve-perso mb-6 flex items-center justify-center">
             Questions fréquentes
@@ -383,28 +509,6 @@ export default function Agenda() {
                 Les ateliers sont ouverts dès <strong>6 ans</strong>. Le
                 dimanche, les sessions sont accessibles dès{" "}
                 <strong>3 ans</strong>.
-              </p>
-            </div>
-
-            <div className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition hover:scale-110">
-              <h3 className="font-semibold font-texte text-xl text-mauve-perso mb-2">
-                Quels sont les tarifs ?
-              </h3>
-              <p className="font-texte">
-                <strong>Mercredis Art-thérapie :</strong> la séance est à{" "}
-                <strong>45€ par enfant</strong>.
-                <br />
-                Une formule d’<strong>abonnement de 5 séances</strong> est
-                proposée à <strong>200€</strong> (au lieu de 225€).
-                <br />
-                Les ateliers se déroulent de <strong>14h à 17h</strong>, soit 3h
-                chaque mercredi après-midi.
-                <br />
-                <br />
-                <strong>Samedis Acroyoga</strong> et{" "}
-                <strong>Dimanches en mouvement</strong> : tarif de
-                <strong> 20€ par personne</strong> pour une séance d’
-                <strong>1h</strong>.
               </p>
             </div>
           </div>

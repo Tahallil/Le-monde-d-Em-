@@ -159,7 +159,7 @@ function Accueil() {
                   telephone: "+32-472-71-49-70",
                   email: "contact.lemondedema@gmail.com",
                   inLanguage: "fr-BE",
-                  priceRange: "20€–45€",
+                  priceRange: "10-30€",
                   paymentAccepted: "Cash, Bank transfer",
 
                   /* ▶ Zone couverte (SAB) */
