@@ -156,7 +156,7 @@ export default function Agenda() {
                 name: "À partir de quel âge les enfants peuvent-ils participer ?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Les ateliers d'art-thérapie et pleine conscience sont ouverts dès 6 ans. Le yoga parent-enfant du dimanche accueille les enfants dès 3 ans accompagnés d'un parent.",
+                  text: "Les ateliers d'art-thérapie et pleine conscience sont ouverts dès 6 ans. Le yoga parent-enfant du dimanche accueille les enfants dès 5 ans accompagnés d'un parent.",
                 },
               },
               {
@@ -317,13 +317,13 @@ export default function Agenda() {
             </li>
 
             <li className="bg-white p-4 rounded-lg shadow flex justify-between items-center">
-              <span>📍 Dimanche : ORIGIN'Loisirs asbl (Rixensart)</span>
+              <span>📍 Dimanche : Dream Club (Wavre)</span>
               <a
-                href="https://www.google.com/maps/place/ORIGIN'Loisirs+asbl/@50.7132526,4.5338317,16z/data=!4m14!1m7!3m6!1s0x47c3d6ffa047537d:0x27fa0b603f62406!2sORIGIN'Loisirs+asbl!8m2!3d50.7132492!4d4.5364066!16s%2Fg%2F11b7rn97xc!3m5!1s0x47c3d6ffa047537d:0x27fa0b603f62406!8m2!3d50.7132492!4d4.5364066!16s%2Fg%2F11b7rn97xc?entry=ttu"
+                href="https://www.google.com/maps/place/Dream+Club+-+Wavre/@50.7166036,4.602333,16z/data=!3m1!4b1!4m6!3m5!1s0x47c17d0b5707a27f:0x3be96cd77c14ce4c!8m2!3d50.7166002!4d4.6049079!16s%2Fg%2F11y3nw648m?entry=ttu&g_ep=EgoyMDI1MTAyNi4wIKXMDSoASAFQAw%3D%3Dhttps://www.google.com/maps/place/ORIGIN'Loisirs+asbl/@50.7132526,4.5338317,16z/data=!4m14!1m7!3m6!1s0x47c3d6ffa047537d:0x27fa0b603f62406!2sORIGIN'Loisirs+asbl!8m2!3d50.7132492!4d4.5364066!16s%2Fg%2F11b7rn97xc!3m5!1s0x47c3d6ffa047537d:0x27fa0b603f62406!8m2!3d50.7132492!4d4.5364066!16s%2Fg%2F11b7rn97xc?entry=ttu"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-rose-perso hover:underline text-sm"
-                aria-label="Voir ORIGIN'Loisirs asbl sur Google Maps (nouvel onglet)"
+                aria-label="Voir Dream Club sur Google Maps (nouvel onglet)"
               >
                 Voir sur Google Maps
               </a>
@@ -506,9 +506,9 @@ export default function Agenda() {
                 À partir de quel âge les enfants peuvent-ils participer ?
               </h3>
               <p className="font-texte">
-                Les ateliers sont ouverts dès <strong>5 ans</strong>. Le
+                Les ateliers sont ouverts dès <strong>6 ans</strong>. Le
                 dimanche, les sessions sont accessibles dès{" "}
-                <strong>3 ans</strong>.
+                <strong>5 ans</strong>.
               </p>
             </div>
           </div>

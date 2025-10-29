@@ -259,7 +259,7 @@ export default function Activites() {
                 name: "À partir de quel âge peuvent participer les enfants ?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Les ateliers d'art-thérapie sont ouverts dès 6 ans. Pour le yoga parent-enfant du dimanche, nous accueillons les enfants dès 3 ans accompagnés d'un parent.",
+                  text: "Les ateliers d'art-thérapie sont ouverts dès 6 ans. Pour le yoga parent-enfant du dimanche, nous accueillons les enfants dès 5 ans accompagnés d'un parent.",
                 },
               },
               {
@@ -310,8 +310,8 @@ export default function Activites() {
           {/* Intro + boutons (pleine conscience + agenda, plus haut) */}
           <div className="mt-5 md:mt-6">
             <div className="mx-auto max-w-3xl rounded-2xl bg-white/15 backdrop-blur px-5 py-4 shadow-[0_8px_24px_rgba(0,0,0,0.08)]">
-              <p className="text-[15px] sm:text-base font-texte text-white/95 text-center">
-                Nous proposons trois types d’ateliers :{" "}
+              <p className="font-texte leading-relaxed text-gray-800 text-center">
+                Je vous propose trois types d’ateliers :{" "}
                 <strong>le mercredi</strong> (Art-thérapie et Yoga),
                 <strong> le samedi</strong> (Acroyoga famille) et{" "}
                 <strong>le dimanche</strong> (Yoga parent-enfant).
@@ -471,243 +471,203 @@ export default function Activites() {
         </div>
       </section>
 
-      {/* Pleine Conscience */}
+      {/* Pleine Conscience — refonte complète */}
       <section
         id="pleine-conscience"
         className="w-full bg-rose-perso/40"
         aria-labelledby="pc-title"
       >
-        {/* Header avec image pleine largeur et texte superposé */}
-        <div className="relative w-full h-[40vh] md:h-[50vh] overflow-hidden">
+        {/* HERO avec overlay dégradé cohérent */}
+        <div className="relative w-full h-[44vh] md:h-[54vh] overflow-hidden">
           <picture>
             <source
               type="image/webp"
               srcSet="/images/webp/pleine-conscience-480.webp 480w,
-              /images/webp/pleine-conscience-768.webp 768w,
-              /images/webp/pleine-conscience-1280.webp 1280w,
-              /images/webp/pleine-conscience-1920.webp 1920w"
+                /images/webp/pleine-conscience-768.webp 768w,
+                /images/webp/pleine-conscience-1280.webp 1280w,
+                /images/webp/pleine-conscience-1920.webp 1920w"
             />
             <img
               src="/images/pleine-conscience-1280.jpg"
               sizes="100vw"
-              alt="Atelier de pleine conscience pour enfants : méditation et sérénité dans le Brabant wallon"
+              alt="Atelier de pleine conscience pour enfants : méditation, respiration et bien-être"
               width="1920"
               height="1080"
               loading="eager"
               fetchpriority="high"
               decoding="async"
-              className="w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover"
             />
           </picture>
-          <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-            <div className="text-center px-4">
-              <h2
-                id="pc-title"
-                className="text-6xl md:text-9xl text-white font-titre"
-                style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.3)" }}
-              >
-                La pleine conscience
-              </h2>
-            </div>
+
+          <div className="absolute inset-0 bg-gradient-to-br from-mauve-perso/45 via-black/20 to-rose-perso/35" />
+
+          <div className="absolute inset-0 flex items-center justify-center text-center px-6">
+            <h2
+              id="pc-title"
+              className="text-6xl md:text-9xl text-white font-titre drop-shadow-2xl"
+              style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.3)" }}
+            >
+              La pleine conscience
+            </h2>
           </div>
         </div>
 
-        {/* Description sous l'image */}
-        <section className="max-w-5xl mx-auto px-6 py-12 space-y-12 text-center md:text-left">
-          {/* Bloc 1 */}
-          <div className="space-y-10">
-            {/* Introduction avec icône */}
-            <Reveal
-              as="div"
-              className="flex flex-col md:flex-row items-start gap-4"
-            >
-              <div className="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-2xl bg-mauve-perso/10 text-mauve-perso">
-                <FaSeedling className="text-2xl" aria-hidden="true" />
-              </div>
-              <p className="md:text-xl font-texte leading-relaxed text-gray-800">
-                En complément avec les autres activités,{" "}
-                <span>
-                  cet atelier inclut régulièrement des temps de méditation
-                  guidée, de relaxation, de présence attentive (pleine
-                  conscience) et de communication non-violente
-                </span>{" "}
-                lorsque c'est nécessaire. Ces pratiques visent à{" "}
-                <span>ancrer les enfants dans l'instant présent</span>, à{" "}
-                <span>développer leur intelligence émotionnelle</span> et à{" "}
-                <span>
-                  renforcer leur capacité à interagir de manière apaisée et
-                  constructive
-                </span>{" "}
-                avec leur environnement.
-              </p>
-            </Reveal>
-
-            <Reveal
-              as="section"
-              className="rounded-2xl p-8 shadow-lg bg-gradient-to-r from-mauve-perso/10 to-rose-perso/10 border border-mauve-perso/15"
-            >
-              <h3 className="text-3xl md:text-4xl font-titre font-semibold text-mauve-perso mb-8 text-center">
-                L'introduction de la pleine conscience permet aux enfants
-                d'acquérir :
-              </h3>
-
-              <ul className="grid md:grid-cols-2 gap-4">
-                {[
-                  {
-                    icon: <FaEye />,
-                    text: (
-                      <>
-                        {" "}
-                        <span className="font-semibold">
-                          Une conscience de soi accrue
-                        </span>{" "}
-                        (émotions, pensées, sensations){" "}
-                      </>
-                    ),
-                  },
-                  {
-                    icon: <FaHeart />,
-                    text: (
-                      <>
-                        {" "}
-                        <span className="font-semibold">
-                          Une empathie authentique
-                        </span>{" "}
-                        envers autrui{" "}
-                      </>
-                    ),
-                  },
-                  {
-                    icon: <FaLeaf />,
-                    text: (
-                      <>
-                        {" "}
-                        <span className="font-semibold">
-                          Des techniques
-                        </span>{" "}
-                        pour apaiser et concentrer l'esprit{" "}
-                      </>
-                    ),
-                  },
-                  {
-                    icon: <FaComments />,
-                    text: (
-                      <>
-                        {" "}
-                        <span className="font-semibold">Des outils</span> pour
-                        une communication consciente et bienveillante{" "}
-                      </>
-                    ),
-                  },
-                  {
-                    icon: <FaTools />,
-                    text: (
-                      <>
-                        {" "}
-                        <span className="font-semibold">La capacité</span> à
-                        appliquer ces compétences dans leur quotidien{" "}
-                      </>
-                    ),
-                  },
-                ].map((it, idx) => (
-                  <li
-                    key={idx}
-                    className="group rounded-2xl bg-white/80 p-5 shadow-sm border border-mauve-perso/10
-                               hover:shadow-md hover:-translate-y-0.5 transition-all"
-                  >
-                    <div className="flex items-start gap-4">
-                      <span
-                        className="inline-flex w-10 h-10 items-center justify-center rounded-xl bg-mauve-perso/10 text-mauve-perso
-                           transition-transform group-hover:scale-110"
-                        aria-hidden="true"
-                      >
-                        {it.icon}
-                      </span>
-                      <p className="text-lg md:text-xl font-texte leading-relaxed text-gray-800">
-                        {it.text}
-                      </p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
-
-            {/* Deuxième liste avec icônes */}
-            <Reveal
-              as="section"
-              className="rounded-2xl p-8 shadow-lg bg-gradient-to-r from-mauve-perso/10 to-rose-perso/10 border border-mauve-perso/15"
-            >
-              <h3 className="text-3xl md:text-4xl font-titre font-semibold text-mauve-perso mb-8 text-center">
-                À plus long terme, la pleine conscience contribue à :
-              </h3>
-
-              <ul className="grid md:grid-cols-2 gap-4">
-                {[
-                  {
-                    icon: <FaLightbulb />,
-                    text: (
-                      <>
-                        <span className="font-semibold">
-                          Stimuler la créativité
-                        </span>
-                      </>
-                    ),
-                  },
-                  {
-                    icon: <FaBullseye />,
-                    text: (
-                      <>
-                        <span className="font-semibold">
-                          Renforcer la concentration
-                        </span>
-                      </>
-                    ),
-                  },
-                  {
-                    icon: <FaBrain />,
-                    text: (
-                      <>
-                        <span className="font-semibold">
-                          Développer l'intelligence émotionnelle
-                        </span>
-                      </>
-                    ),
-                  },
-                  {
-                    icon: <FaShieldAlt />,
-                    text: (
-                      <>
-                        <span className="font-semibold">
-                          Préserver la santé mentale et émotionnelle
-                        </span>{" "}
-                        des enfants
-                      </>
-                    ),
-                  },
-                ].map((it, idx) => (
-                  <li
-                    key={idx}
-                    className="group rounded-2xl bg-white/80 p-5 shadow-sm border border-mauve-perso/10
-                   hover:shadow-md hover:-translate-y-0.5 transition-all"
-                  >
-                    <div className="flex items-start gap-4">
-                      <span
-                        className="inline-flex w-10 h-10 items-center justify-center rounded-xl bg-mauve-perso/10 text-mauve-perso
-                       transition-transform group-hover:scale-110"
-                        aria-hidden="true"
-                      >
-                        {it.icon}
-                      </span>
-                      <p className="text-lg md:text-xl font-texte leading-relaxed text-gray-800">
-                        {it.text}
-                      </p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
+        <div className="max-w-6xl mx-auto px-6 py-12 space-y-14">
+          {/* INTRO : badge + carte résumé alignée sur “Tarifs” */}
+          <div className="flex justify-center">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 text-mauve-perso shadow-sm font-texte text-sm">
+              🌿 Pratiques douces & laïques
+            </span>
           </div>
-        </section>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Carte titre + icône */}
+            <article className="md:col-span-1 rounded-2xl bg-white/80 backdrop-blur-sm shadow-lg border border-mauve-perso/10 p-8 text-center">
+              <div
+                className="flex items-center justify-center 
+                        w-16 h-16 mx-auto mb-4 rounded-2xl bg-white/70 shadow-sm 
+                        text-mauve-perso text-3xl"
+              >
+                <FaSeedling aria-hidden="true" />
+              </div>
+              <h3 className="font-titre text-4xl text-mauve-perso">
+                S’ancrer & respirer
+              </h3>
+              <p className="font-texte text-gray-600 mt-3">
+                Méditation guidée, respiration, relaxation et présence
+                attentive.
+              </p>
+            </article>
+
+            {/* Carte texte principale */}
+            <article className="md:col-span-2 rounded-2xl bg-white/80 backdrop-blur-sm shadow-lg border border-mauve-perso/10 p-8">
+              <p className="font-texte text-lg md:text-2xl text-gray-800 leading-relaxed">
+                En complément des autres activités, les enfants explorent des
+                temps de{" "}
+                <span className="font-semibold text-mauve-perso">
+                  méditation
+                </span>
+                , de{" "}
+                <span className="font-semibold text-mauve-perso">
+                  relaxation
+                </span>
+                , de{" "}
+                <span className="font-semibold text-mauve-perso">
+                  pleine conscience
+                </span>{" "}
+                et de{" "}
+                <span className="font-semibold text-mauve-perso">
+                  communication non-violente
+                </span>
+                . Objectif :{" "}
+                <span className="font-semibold text-mauve-perso">
+                  s’ancrer dans l’instant
+                </span>
+                ,
+                <span className="font-semibold text-mauve-perso">
+                  {" "}
+                  réguler ses émotions
+                </span>{" "}
+                et
+                <span className="font-semibold text-mauve-perso">
+                  {" "}
+                  interagir sereinement
+                </span>{" "}
+                avec le groupe.
+              </p>
+
+              {/* Line separator */}
+              <div className="flex justify-center my-6">
+                <div className="w-24 h-1 bg-mauve-perso rounded-full" />
+              </div>
+
+              {/* 3 “chips” synthèse */}
+              <div className="flex flex-col md:flex-row gap-3 md:gap-4 text-center md:text-left">
+                <div className="flex-1 rounded-xl bg-mauve-perso/10 text-mauve-perso px-4 py-3 font-texte">
+                  🧠 Intelligence émotionnelle
+                </div>
+                <div className="flex-1 rounded-xl bg-mauve-perso/10 text-mauve-perso px-4 py-3 font-texte">
+                  🌬️ Respiration & apaisement
+                </div>
+                <div className="flex-1 rounded-xl bg-mauve-perso/10 text-mauve-perso px-4 py-3 font-texte">
+                  🤝 CNV & empathie
+                </div>
+              </div>
+            </article>
+          </div>
+
+          {/* BÉNÉFICES (cartes) — même style que Tarifs */}
+          <section aria-labelledby="benefices-title">
+            <h3
+              id="benefices-title"
+              className="text-4xl md:text-5xl font-titre text-mauve-perso text-center mb-4"
+            >
+              Bénéfices concrets
+            </h3>
+            <div className="flex justify-center mb-8">
+              <div className="w-24 h-1 bg-mauve-perso rounded-full"></div>
+            </div>
+
+            <ul className="grid md:grid-cols-2 gap-6">
+              {[
+                {
+                  icon: <FaEye />,
+                  title: "Conscience de soi",
+                  text: "Mieux sentir ses émotions, ses pensées et ses sensations corporelles.",
+                },
+                {
+                  icon: <FaHeart />,
+                  title: "Empathie & lien",
+                  text: "Développer une attitude bienveillante envers soi et les autres.",
+                },
+                {
+                  icon: <FaLeaf />,
+                  title: "Calme & concentration",
+                  text: "Des techniques simples pour apaiser l’esprit et se recentrer.",
+                },
+                {
+                  icon: <FaComments />,
+                  title: "Communication apaisée",
+                  text: "Outils de parole et d’écoute inspirés de la CNV.",
+                },
+              ].map((b, i) => (
+                <li
+                  key={`b-${i}`}
+                  className="group rounded-2xl bg-white/80 p-6 shadow-sm border border-mauve-perso/10 hover:shadow-md hover:-translate-y-0.5 transition-all"
+                >
+                  <div className="flex items-start gap-4">
+                    <span
+                      className="inline-flex min-w-[2.75rem] min-h-[2.75rem] items-center justify-center rounded-xl 
+                           bg-mauve-perso/10 text-mauve-perso text-2xl sm:text-3xl transition-transform group-hover:scale-110"
+                      aria-hidden="true"
+                    >
+                      {b.icon}
+                    </span>
+                    <div>
+                      <h4 className="font-soustitre text-2xl text-mauve-perso">
+                        {b.title}
+                      </h4>
+                      <p className="font-texte text-gray-700 mt-1">{b.text}</p>
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          {/* CTA harmonisé */}
+          <div className="text-center">
+            <a
+              href="/agenda#reservations"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-white text-mauve-perso font-texte text-lg rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all"
+              aria-label="Voir les créneaux disponibles dans l’agenda"
+            >
+              Voir les créneaux disponibles
+              <span aria-hidden>→</span>
+            </a>
+          </div>
+        </div>
       </section>
 
       {/* Section Art-thérapie */}
@@ -759,6 +719,23 @@ export default function Activites() {
                         Découvrez comment l’art devient un vecteur de bien-être
                         et de transformation personnelle.
                       </p>
+                      <div className="flex flex-col md:flex-row gap-4 justify-center mt-10">
+                        <a
+                          href="#deroule-title"
+                          className="inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-mauve-perso bg-white text-mauve-perso font-texte text-lg rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all"
+                          aria-label="Aller au déroulement d’une séance"
+                        >
+                          <span>🕊️</span> Déroulement d’une séance
+                        </a>
+
+                        <a
+                          href="#arts-title"
+                          className="inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-white bg-mauve-perso text-white font-texte text-lg rounded-xl shadow-lg hover:bg-[#4a2250] hover:shadow-xl hover:scale-105 transition-all"
+                          aria-label="Découvrir les activités d’art-thérapie"
+                        >
+                          <span>🎨</span> Les activités d’art-thérapie
+                        </a>
+                      </div>
                     </div>
 
                     {/* Main Content (version améliorée) */}
@@ -948,6 +925,100 @@ export default function Activites() {
                   </div>
                 </div>
               </div>
+
+              {/* DÉROULEMENT — carte / timeline */}
+              <section aria-labelledby="deroule-title" className="mt-10">
+                <article className="relative rounded-3xl p-8 md:p-10 bg-blue-perso/20 backdrop-blur-sm shadow-lg border border-mauve-perso/10">
+                  {/* halo décoratif discret */}
+                  <div
+                    className="pointer-events-none absolute -inset-16 opacity-30 blur-3xl"
+                    aria-hidden="true"
+                    style={{
+                      background:
+                        "radial-gradient(40rem 28rem at 15% 10%, rgba(246,117,101,0.10), transparent 60%), radial-gradient(34rem 24rem at 85% 70%, rgba(155,219,231,0.10), transparent 60%)",
+                    }}
+                  />
+
+                  <div className="relative">
+                    <h3
+                      id="deroule-title"
+                      className="text-4xl md:text-5xl font-titre text-mauve-perso text-center"
+                    >
+                      Déroulement d’une séance (3h)
+                    </h3>
+                    <div className="flex justify-center mt-4 mb-8">
+                      <div className="w-24 h-1 bg-mauve-perso rounded-full" />
+                    </div>
+
+                    {/* chips d’infos clés */}
+                    <div className="flex flex-wrap gap-3 justify-center mb-8">
+                      <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-mauve-perso/10 text-mauve-perso font-texte">
+                        ⏱️ Durée totale : 3h
+                      </span>
+                      <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-mauve-perso/10 text-mauve-perso font-texte">
+                        🧘 Inclus : Yoga pendant la session
+                      </span>
+                      <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-mauve-perso/10 text-mauve-perso font-texte">
+                        🌿 Pleine conscience & météo intérieure
+                      </span>
+                    </div>
+
+                    {/* timeline verticale */}
+                    <ol className="relative border-s-2 border-mauve-perso/20 ml-4 space-y-7">
+                      <li className="ms-4">
+                        <div className="absolute -start-[9px] mt-1 w-4 h-4 rounded-full border-2 border-white bg-mauve-perso shadow" />
+                        <div className="rounded-xl bg-rose-perso/10 border border-mauve-perso/10 p-4">
+                          <h4 className="font-soustitre text-2xl text-mauve-perso">
+                            Pleine conscience & météo intérieure — 30 min
+                          </h4>
+                          <p className="font-texte text-gray-800">
+                            Ancrage, respiration simple, écoute de soi
+                            (émotions, pensées, sensations) pour poser un cadre
+                            calme et bienveillant.
+                          </p>
+                        </div>
+                      </li>
+
+                      <li className="ms-4">
+                        <div className="absolute -start-[9px] mt-1 w-4 h-4 rounded-full border-2 border-white bg-mauve-perso shadow" />
+                        <div className="rounded-xl bg-rose-perso/10 border border-mauve-perso/10 p-4">
+                          <h4 className="font-soustitre text-2xl text-mauve-perso">
+                            Yoga ludique — 1 h
+                          </h4>
+                          <p className="font-texte text-gray-800">
+                            Mouvement doux, postures accessibles, jeux corporels
+                            et petites relaxations pour développer conscience du
+                            corps, concentration et détente.
+                          </p>
+                        </div>
+                      </li>
+
+                      <li className="ms-4">
+                        <div className="absolute -start-[9px] mt-1 w-4 h-4 rounded-full border-2 border-white bg-mauve-perso shadow" />
+                        <div className="rounded-xl bg-rose-perso/10 border border-mauve-perso/10 p-4">
+                          <h4 className="font-soustitre text-2xl text-mauve-perso">
+                            Art-thérapie — 1 h 30
+                          </h4>
+                          <p className="font-texte text-gray-800">
+                            Exploration créative non verbale (peinture, collage,
+                            pastels, expression corporelle, etc.). Liberté
+                            d’expression, lâcher-prise et mise en forme des
+                            ressentis. Plusieurs activités parmi celles
+                            présentées dans la section.
+                          </p>
+                        </div>
+                      </li>
+                    </ol>
+
+                    {/* note d’organisation */}
+                    <p className="font-texte text-gray-700 mt-8 text-center">
+                      🔁 L’ordre et la durée peuvent légèrement s’adapter au
+                      groupe (âge, énergie, besoins), tout en conservant
+                      l’équilibre global de la séance.
+                    </p>
+                  </div>
+                </article>
+              </section>
 
               {/* Call to Action */}
               <div className="text-center mt-12 fade-in">
@@ -1372,7 +1443,7 @@ export default function Activites() {
 
                   {/* Sous-titre */}
                   <p className="font-texte text-lg sm:text-xl mt-4">
-                    Cultiver l’écoute, l’empathie et l’expression authentique
+                    Créer, ressentir et se relier à la nature
                   </p>
 
                   {/* Texte détaillé (dépliable) */}
@@ -1732,6 +1803,127 @@ export default function Activites() {
             </picture>
           </div>
         </div>
+        {/* DÉROULEMENT — Acroyoga (intégré dans la section principale) */}
+        <div
+          id="deroule-acroyoga"
+          aria-labelledby="deroule-acroyoga-title"
+          className="w-full px-6 md:px-12 py-16"
+        >
+          <article className="relative rounded-3xl p-8 md:p-10 bg-white/80 backdrop-blur-sm shadow-lg border border-mauve-perso/10">
+            {/* halo décoratif */}
+            <div
+              className="pointer-events-none absolute -inset-16 opacity-30 blur-3xl"
+              aria-hidden="true"
+              style={{
+                background:
+                  "radial-gradient(40rem 28rem at 15% 10%, rgba(246,117,101,0.10), transparent 60%), radial-gradient(34rem 24rem at 85% 70%, rgba(155,219,231,0.10), transparent 60%)",
+              }}
+            />
+
+            <div className="relative">
+              <h3
+                id="deroule-acroyoga-title"
+                className="text-4xl md:text-5xl font-titre text-mauve-perso text-center"
+              >
+                Déroulement d’une séance d’acroyoga
+              </h3>
+              <div className="flex justify-center mt-4 mb-8">
+                <div className="w-24 h-1 bg-mauve-perso rounded-full"></div>
+              </div>
+
+              {/* chips d’infos clés */}
+              <div className="flex flex-wrap justify-center gap-3 mb-10">
+                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-mauve-perso/10 text-mauve-perso font-texte">
+                  ⏱️ Durée : 1h
+                </span>
+                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-mauve-perso/10 text-mauve-perso font-texte">
+                  👨‍👩‍👧 Activité en duo parent-enfant
+                </span>
+                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-mauve-perso/10 text-mauve-perso font-texte">
+                  🌸 Bien-être & complicité
+                </span>
+              </div>
+
+              {/* Timeline */}
+              <ol className="relative border-s-2 border-mauve-perso/20 ml-4 space-y-7">
+                <li className="ms-4">
+                  <div className="absolute -start-[9px] mt-1 w-4 h-4 rounded-full border-2 border-white bg-mauve-perso shadow" />
+                  <div className="rounded-xl bg-rose-perso/10 border border-mauve-perso/10 p-4">
+                    <h4 className="font-soustitre text-2xl text-mauve-perso">
+                      Pleine conscience & météo intérieure
+                    </h4>
+                    <p className="font-texte text-gray-800">
+                      Moment d’ancrage calme pour écouter sa respiration,
+                      observer ses émotions et se connecter à soi-même et à son
+                      partenaire.
+                    </p>
+                  </div>
+                </li>
+
+                <li className="ms-4">
+                  <div className="absolute -start-[9px] mt-1 w-4 h-4 rounded-full border-2 border-white bg-mauve-perso shadow" />
+                  <div className="rounded-xl bg-rose-perso/10 border border-mauve-perso/10 p-4">
+                    <h4 className="font-soustitre text-2xl text-mauve-perso">
+                      Respiration & ballon de souffle
+                    </h4>
+                    <p className="font-texte text-gray-800">
+                      Jeux de respiration avec un ballon pour synchroniser le
+                      souffle et développer la conscience du mouvement
+                      respiratoire.
+                    </p>
+                  </div>
+                </li>
+
+                <li className="ms-4">
+                  <div className="absolute -start-[9px] mt-1 w-4 h-4 rounded-full border-2 border-white bg-mauve-perso shadow" />
+                  <div className="rounded-xl bg-rose-perso/10 border border-mauve-perso/10 p-4">
+                    <h4 className="font-soustitre text-2xl text-mauve-perso">
+                      Mobilité & échauffement
+                    </h4>
+                    <p className="font-texte text-gray-800">
+                      Étirements doux, mobilité articulaire et préparation
+                      ludique du corps avant les postures d’acroyoga.
+                    </p>
+                  </div>
+                </li>
+
+                <li className="ms-4">
+                  <div className="absolute -start-[9px] mt-1 w-4 h-4 rounded-full border-2 border-white bg-mauve-perso shadow" />
+                  <div className="rounded-xl bg-rose-perso/10 border border-mauve-perso/10 p-4">
+                    <h4 className="font-soustitre text-2xl text-mauve-perso">
+                      Corps de séance
+                    </h4>
+                    <p className="font-texte text-gray-800">
+                      Pratique des postures à deux et petits enchaînements.
+                      L’objectif : coopération, équilibre, confiance et rires
+                      partagés.
+                    </p>
+                  </div>
+                </li>
+
+                <li className="ms-4">
+                  <div className="absolute -start-[9px] mt-1 w-4 h-4 rounded-full border-2 border-white bg-mauve-perso shadow" />
+                  <div className="rounded-xl bg-rose-perso/10 border border-mauve-perso/10 p-4">
+                    <h4 className="font-soustitre text-2xl text-mauve-perso">
+                      Massage en duo & retour au calme
+                    </h4>
+                    <p className="font-texte text-gray-800">
+                      Fin de séance tout en douceur : massage parent-enfant pour
+                      détendre le corps, renforcer le lien et clôturer dans la
+                      sérénité.
+                    </p>
+                  </div>
+                </li>
+              </ol>
+
+              {/* note de fin */}
+              <p className="font-texte text-gray-700 mt-8 text-center">
+                💫 Chaque atelier est adapté à l’âge et au niveau du duo.
+                L’esprit de la séance : simplicité, sécurité et plaisir partagé.
+              </p>
+            </div>
+          </article>
+        </div>
       </section>
 
       {/*Yoga*/}
@@ -1825,7 +2017,7 @@ export default function Activites() {
                                bg-white/85 backdrop-blur ring-1 ring-mauve-perso/10
                                text-mauve-perso text-sm font-medium"
                 >
-                  3–5 ans • Dimanche
+                  5 à 15 ans • Dimanche
                 </figcaption>
               </div>
             </figure>
@@ -1846,15 +2038,15 @@ export default function Activites() {
               </div>
 
               <h3 className="text-3xl md:text-5xl font-titre text-mauve-perso mb-3 font-semibold leading-tight">
-                Yoga parent–enfant (3 à 5 ans)
+                Yoga parent–enfant (5 à 15 ans)
               </h3>
               <p className="font-texte text-gray-700">
                 Le{" "}
                 <span className="font-semibold text-mauve-perso">
                   yoga parent-enfant
                 </span>{" "}
-                est une pratique accessible dès l’âge de 3 à 5 ans. Elle permet
-                aux plus jeunes de découvrir le mouvement via des
+                est une pratique accessible dès l’âge de 5 ans. Elle permet aux
+                plus jeunes de découvrir le mouvement via des
                 <span className="font-semibold text-mauve-perso">
                   {" "}
                   jeux corporels ludiques
