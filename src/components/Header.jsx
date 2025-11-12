@@ -37,7 +37,7 @@ export default function Header({ onMenuToggle }) {
             decoding="async"
           />
         </picture>
-        <span className="font-bold font-titre text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-900 whitespace-nowrap">
+        <span className="font-bold font-titre text-3xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-900 whitespace-nowrap">
           Le monde d'Emâ
         </span>
       </Link>

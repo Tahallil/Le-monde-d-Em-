@@ -310,7 +310,7 @@ export default function Activites() {
           {/* Intro + boutons (pleine conscience + agenda, plus haut) */}
           <div className="mt-5 md:mt-6">
             <div className="mx-auto max-w-3xl rounded-2xl bg-white/15 backdrop-blur px-5 py-4 shadow-[0_8px_24px_rgba(0,0,0,0.08)]">
-              <p className="font-texte leading-relaxed text-gray-800 text-center">
+              <p className="font-texte leading-relaxed text-white text-center">
                 Je vous propose trois types d’ateliers :{" "}
                 <strong>le mercredi</strong> (Art-thérapie et Yoga),
                 <strong> le samedi</strong> (Acroyoga famille) et{" "}
@@ -1809,7 +1809,7 @@ export default function Activites() {
           aria-labelledby="deroule-acroyoga-title"
           className="w-full px-6 md:px-12 py-16"
         >
-          <article className="relative rounded-3xl p-8 md:p-10 bg-white/80 backdrop-blur-sm shadow-lg border border-mauve-perso/10">
+          <article className="relative rounded-3xl p-8 md:p-10 bg-blue-perso backdrop-blur-sm shadow-lg border border-mauve-perso/10">
             {/* halo décoratif */}
             <div
               className="pointer-events-none absolute -inset-16 opacity-30 blur-3xl"
